@@ -21,17 +21,17 @@ In the above code, you will notice several paramaters are available to use to al
 
 #### Height
 
-If height is specified, sets the height and returns the chart. If height is not specified, the default height is 960px, for which the chart is optimized. 
+If height is specified, sets the height and returns the chart. If height is not specified, the default height is 960px, for which the chart is optimized. Input takes an integer.
 
 #### Width
 
-If width is specified, sets the width and returns the chart. If width is not specified, the default width is 610px, for which the chart is optimized. 
+If width is specified, sets the width and returns the chart. If width is not specified, the default width is 610px, for which the chart is optimized. Input takes an integer.
 
 #### Color
 
 If color is specified, sets the color scale and returns the chart. If color is not specified, the default color scheme is d3.chemeCategory20. 
 
-Color Scheme Options:
+Color Scheme Input Options:
 
 - d3.schemeCategory10
 - d3.schemeCategory20
@@ -40,4 +40,4 @@ Color Scheme Options:
 
 #### Title
 
-If title is specified, sets the title and returns the chart. If title is not specified, the default title is "My TreeMap". 
+If title is specified, sets the title and returns the chart. If title is not specified, the default title is "My TreeMap". Input takes a string.
