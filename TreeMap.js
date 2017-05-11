@@ -1,4 +1,4 @@
-var TreeMap = function() {
+var TreeMap = function(root) {
     // Set default values
     var height = 610,
         width = 960,
@@ -17,23 +17,9 @@ var TreeMap = function() {
         .size([width, height])
         .round(true)
         .paddingInner(1);
-
-    var root = d3.hierarchy(data)
-        .eachBefore(function(d) { 
-            d.data.id = (d.parent ? d.parent.data.id + "." : "") + d.data.name; 
-        })
-        .sum(function(d) {
-            return +d.size;
-        })
-        .sort(function(a, b) { 
-            return b.height - a.height || b.value - a.value; 
-        });
-
+        
     treemap(root);
 
-    var //fader = function(color) { return d3.interpolateRgb(color, "#fff")(0.2); },
-        //color = d3.scaleOrdinal(d3.schemeCategory20.map(fader)),
-        format = d3.format(",d");
 
     // Function returned by TreeMap
     var chart = function(selection) {

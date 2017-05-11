@@ -4,7 +4,22 @@ The purpose of this software is to create a basic treemap using D3. More specifi
 
 ### Getting Started
 
-To get started, it is important to inclued the TreeMap script in the head of the html page below the main js file. In your main js file, read in the data file of your choice, and simply perform the data bind as shown below. Note that it is necessary to use jquery to select the element where the chart will be rendered.
+To get started, it is important to inclued the TreeMap script in the head of the html page below the main js file. In your main js file, read in the data file of your choice, and simply perform the data bind as shown below. Note that it is necessary to use jquery to select the element where the chart will be rendered. This function uses hierarchical data. You will need to define root using `d3.hierarchy()`.
+
+~~~~
+var root = d3.hierarchy(data)
+  .eachBefore(function(d) { 
+      d.data.id = (d.parent ? d.parent.data.id + "." : "") + d.data.name; 
+  })
+  .sum(function(d) {
+      return +d.size;
+  })
+  .sort(function(a, b) { 
+      return b.height - a.height || b.value - a.value; 
+  });
+~~~~
+
+The TreeMap function takes data as an argument because d3.treemap is defined inside the TreeMap function. 
 
 ~~~~
 var myChart = TreeMap(data).param1(value1).param2(value2);
