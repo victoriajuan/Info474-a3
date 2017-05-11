@@ -37,3 +37,7 @@ Color Scheme Options:
 - d3.schemeCategory20
 - d3.schemeCategory20b
 - d3.schemeCategory20c
+
+#### Title
+
+If title is specified, sets the title and returns the chart. If title is not specified, the default title is "My TreeMap". 
